@@ -9,6 +9,7 @@
       ~/.zshrc: zshrc
       ~/.vim: vim
       ~/.vimrc: vimrc
+      ~/.vimrc.local: vimrc.local
       # ~/.tmux.conf: tmux.conf
 
 - shell:

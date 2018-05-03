@@ -1,0 +1,3 @@
+"-------------- Maps --------------"
+" Save file with sudo permission (nice mapping)
+nmap <LEADER>R :w !sudo tee %<CR>
