@@ -1,3 +1,13 @@
 "-------------- Maps --------------"
 " Save file with sudo permission (nice mapping)
 nmap <LEADER>R :w !sudo tee %<CR>
+
+"-------------- General Sets --------------"
+"Show relative line numbers
+set relativenumber
+"Show absolute line numbers
+set number
+"Highlight the the searched pattern
+set incsearch
+" Ignore some extensions
+set wildignore=*.class,*.zip,*.gif,*.pyc,*.swp,*.tar.*,*.pdf
