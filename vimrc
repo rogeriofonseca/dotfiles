@@ -543,3 +543,7 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+if filereadable("~/.vimrc.local")
+      source ~/.vimrc.local
+endif

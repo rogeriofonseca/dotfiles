@@ -51,7 +51,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vagrant docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,18 +85,28 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Shotcuts Copy and Paste
-unamestr=$(uname)
-
-if [[ $unamestr == 'Linux' ]];
-then
-    alias pbcopy='xclip -selection clipboard'
-    alias pbpaste='xclip -selection clipboard -o'
-fi
 
 alias st='git st '
+
+#PYTHON ENVIRONMENT
+export WORKON_HOME=~/.ve
+export PROJECT_HOME=~/workspace
+eval "$(pyenv init -)"
+#pyenv virtualenvwrapper_lazy
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
+fi
+
+#Detect OS
+unamestr=`uname`
+
+unalias pbpaste 2>/dev/null
+unalias pbcopy 2>/dev/null
+
+if [[ $unamestr == 'Linux' ]]; then
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
 fi

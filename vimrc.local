@@ -1,2 +1,18 @@
+<<<<<<< HEAD
 hi Visual term=reverse cterm=reverse guibg=Grey
 set relativenumber
+=======
+"-------------- Maps --------------"
+" Save file with sudo permission (nice mapping)
+nmap <LEADER>R :w !sudo tee %<CR>
+
+"-------------- General Sets --------------"
+"Show relative line numbers
+set relativenumber
+"Show absolute line numbers
+set number
+"Highlight the the searched pattern
+set incsearch
+" Ignore some extensions
+set wildignore=*.class,*.zip,*.gif,*.pyc,*.swp,*.tar.*,*.pdf
+>>>>>>> 76d17d174c1068ac0394a1777c6ba3d2dd387425
