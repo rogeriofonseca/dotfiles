@@ -47,6 +47,8 @@ Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+Plug 'ervandew/eclim'
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -235,7 +237,7 @@ endif
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#syntastic#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -430,7 +432,7 @@ endif
 noremap <leader>z :bp<CR>
 " noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
-" noremap <leader>w :bn<CR>
+noremap <leader>w :w<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
@@ -486,6 +488,7 @@ let g:jedi#smart_auto_mappings = 0
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
+let g:syntastic_mode_map = { 'passive_filetypes': ['java'] }
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1

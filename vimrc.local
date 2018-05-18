@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+"-------------- Visual Custom --------------"
 hi Visual term=reverse cterm=reverse guibg=Grey
-set relativenumber
-=======
+
 "-------------- Maps --------------"
 " Save file with sudo permission (nice mapping)
 nmap <LEADER>R :w !sudo tee %<CR>
@@ -15,4 +14,7 @@ set number
 set incsearch
 " Ignore some extensions
 set wildignore=*.class,*.zip,*.gif,*.pyc,*.swp,*.tar.*,*.pdf
->>>>>>> 76d17d174c1068ac0394a1777c6ba3d2dd387425
+
+"-------------- Shortcuts and Hot Keys --------------"
+nnoremap <leader>se :vplit ~/.vimrc<cr>
+noremap <leader>sv :source ~/.vimrc<cr>

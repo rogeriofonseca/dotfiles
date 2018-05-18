@@ -109,4 +109,6 @@ unalias pbcopy 2>/dev/null
 if [[ $unamestr == 'Linux' ]]; then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
+else
+    source ~/.zshrc.osx.local
 fi
