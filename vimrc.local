@@ -9,7 +9,6 @@ nmap <LEADER>R :w !sudo tee %<CR>
 "Show relative line numbers
 set relativenumber
 "Show absolute line numbers
-set number
 "Highlight the the searched pattern
 set incsearch
 " Ignore some extensions
@@ -18,3 +17,13 @@ set wildignore=*.class,*.zip,*.gif,*.pyc,*.swp,*.tar.*,*.pdf
 "-------------- Shortcuts and Hot Keys --------------"
 nnoremap <leader>se :vplit ~/.vimrc<cr>
 noremap <leader>sv :source ~/.vimrc<cr>
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+    set norelativenumber
+  else
+    set nonumber
+    set relativenumber
+  endif
+endfunc
