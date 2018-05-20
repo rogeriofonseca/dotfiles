@@ -97,7 +97,8 @@ eval "$(pyenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ ! $TERM =~ screen ]]; then
-    exec tmux
+    #exec tmux attach
+    tmux attach || tmux new
 fi
 
 #Detect OS
