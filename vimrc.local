@@ -29,4 +29,4 @@ function! NumberToggle()
 endfunc
 
 "Recovery command history FZF
-nmap <leader>r :History:<CR>
+nmap <C-r> :History:<CR>
