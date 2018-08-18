@@ -85,6 +85,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Shotcuts Copy and Paste
+function pgrep() {
+    ps aux | grep $1 | grep -v grep
+}
 
 alias st='git st '
 
@@ -101,6 +104,7 @@ if [[ ! $TERM =~ screen ]]; then
     tmux attach || tmux new
 fi
 
+export EDITOR=VIM
 #Detect OS
 unamestr=`uname`
 
