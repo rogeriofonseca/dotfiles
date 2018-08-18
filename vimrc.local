@@ -27,3 +27,6 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
+
+"Recovery command history FZF
+nmap <leader>r :History:<CR>
