@@ -1,9 +1,10 @@
 # dotfiles
 
-1 - 
-`git clone https://github.com/rogeriofonseca/dotfiles.git`
+1 - Clone repository
 
-2 - 
+```git clone https://github.com/rogeriofonseca/dotfiles.git```
+
+2 - Install
 ```
 cd ~/dotfiles
 ./install
@@ -13,7 +14,7 @@ cd ~/dotfiles
 
 
 *Requirements:
-````
+```
 git
 python
 vim
