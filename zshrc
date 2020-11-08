@@ -106,14 +106,15 @@ fi
 
 export EDITOR=VIM
 #Detect OS
-unamestr=`uname`
+platform=`uname`
 
-unalias pbpaste 2>/dev/null
-unalias pbcopy 2>/dev/null
-
-if [[ $unamestr == 'Linux' ]]; then
+platform = `uname`
+if [[ $platform == 'Linux' ]]; then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
 else
     source ~/.zshrc.osx.local
 fi
+
+export PATH="$HOME/.bin:$PATH"
+source /Users/rogeriofonsecagoncalves/.asdf/asdf.sh
