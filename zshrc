@@ -51,7 +51,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant docker)
+plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,6 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias st="git status"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -89,12 +90,15 @@ function pgrep() {
     ps aux | grep $1 | grep -v grep
 }
 
-alias st='git st '
-
 #PYTHON ENVIRONMENT
 export WORKON_HOME=~/.ve
 export PROJECT_HOME=~/workspace
-eval "$(pyenv init -)"
+
+#include eval if pyenv exists
+if pyenv &> /dev/null
+then
+	eval "$(pyenv init -)"
+fi
 #pyenv virtualenvwrapper_lazy
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -108,12 +112,11 @@ export EDITOR=VIM
 #Detect OS
 platform=`uname`
 
-platform = `uname`
 if [[ $platform == 'Linux' ]]; then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
 else
-    source ~/.zshrc.osx.local
+    [ -f ~/.zshrc.osx.local ] && source ~/.zshrc.osx.local
 fi
 
 export PATH="$HOME/.bin:$PATH"
