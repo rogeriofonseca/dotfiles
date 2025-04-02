@@ -212,6 +212,8 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+" Desativa o conceal (se causar problemas)
+let g:indentLine_setConceal = 0  
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
