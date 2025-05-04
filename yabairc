@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+set -x
+
+# ====== Variables =============================
+
+gap_top=4
+gap_bottom=24
+gap_left=4
+gap_right=4
+gap_inner=4
+
+# ===== Loading Scripting Additions ============
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# ===== Border Color Green ===========
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.85
+
+# ===== Tiling setting =========================
+
+yabai -m config layout bsp
+yabai -m config top_padding $gap_top
+yabai -m config bottom_padding $gap_bottom
+yabai -m config left_padding $gap_left
+yabai -m config right_padding $gap_right
+yabai -m config window_gap $gap_inner
+
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
+yabai -m config window_opacity off
+yabai -m config window_shadow float
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+yabai -m config split_ratio 0.50
+yabai -m config auto_balance off
+
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+# ===== Rules ==================================
+
+yabai -m rule --add app=".*" manage layer=normal
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
+yabai -m rule --add title="Software Update" manage=off
+yabai -m rule --add app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+
+# ===== Signals ================================
+
+# Removido Übersicht, adicione se necessário
+# killall limelight &> /dev/null
+# limelight &> /dev/null &
+
+set +x
+printf "yabai: configuration loaded...\\n"
