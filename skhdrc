@@ -35,15 +35,11 @@ lalt - j : yabai -m window --focus south
 lalt - k : yabai -m window --focus north
 lalt - l : yabai -m window --focus east
 
-# Moving windows
+# Moving windows (Mover janelas entre posicoes)
 lshift + lalt - h : yabai -m window --warp west
 lshift + lalt - j : yabai -m window --warp south
 lshift + lalt - k : yabai -m window --warp north
 lshift + lalt - l : yabai -m window --warp east
-
-# Sending Windows to Monitor
-lshift + alt - p : yabai -m window --display 2; yabai -m display --focus 2
-lshift + alt - n : yabai -m window --display 1; yabai -m display --focus 1
 
 # Move focus container to workspace
 lshift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
@@ -51,6 +47,9 @@ lshift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
 lshift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
 lshift + alt - 4 : yabai -m window --space 4; yabai -m space --focus 4
 
+# Sending Windows to Monitor
+lshift + alt - p : yabai -m window --display 2; yabai -m display --focus 2
+lshift + alt - n : yabai -m window --display 1; yabai -m display --focus 1
 
 # Equalize size of windows
 lctrl + alt - e : yabai -m space --balance
@@ -80,4 +79,17 @@ lshift + lctrl + alt - r : /usr/bin/env osascript <<< "display notification \"Re
 
 # Make window native fullscreen
 alt - f : yabai -m window --toggle zoom-fullscreen
-lshift + alt - f : yabai -m window --toggle native-fullscreen
+#lshift + alt - f : yabai -m window --toggle native-fullscreen
+
+## Chatgpt
+### Layout toggle bsp, stack float
+
+    # Alternar para modo BSP
+    alt + shift - b : yabai -m config layout bsp
+
+    # Alternar para modo STACK
+    alt + shift - s : yabai -m config layout stack
+
+    # Alternar para modo FLOAT (modo "desligado")
+    alt + shift - f : yabai -m window --toggle float
+
